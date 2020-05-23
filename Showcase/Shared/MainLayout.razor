@@ -1,0 +1,56 @@
+﻿@inherits LayoutComponentBase
+
+<div>
+    <NavMenu />
+</div>
+
+<div class="main pt-2 min-height">
+
+    <div class="content min-height">
+        @Body
+        <!-- Footer -->
+        <footer class="footer text-center pt-3 pb-3">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Footer Location -->
+                    <div class="col-lg-4 mb-5">
+                        <h4 class="text-uppercase mb-4">Location</h4>
+                        <p class="lead mb-0">
+                            Morgantown, WV
+                        </p>
+                    </div>
+
+                    <!-- Footer Social Icons -->
+                    <div class="col-lg-4 mb-5">
+                        <h4 class="text-uppercase mb-4">Around the Web</h4>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/c-nelson">
+                            <i class="fab fa-fw fa-github"></i>
+                        </a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/nelson-christian/">
+                            <i class="fab fa-fw fa-linkedin-in"></i>
+                        </a>
+                    </div>
+
+                    <!-- Footer About Text -->
+                    <div class="col-lg-4">
+                        <h4 class="text-uppercase mb-4">About this page</h4>
+                        <p class="mb-0">
+                            This page was created using
+                            <br />
+                            <a href="https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor">ASP.NET Blazor</a>
+                            and hosted on
+                            <a href="https://aws.amazon.com/">AWS</a>.
+                            <br />
+                            <a href="https://getbootstrap.com/">Bootstrap</a>
+                            is used for the UI, using a
+                            <a href="http://startbootstrap.com">Start Bootstrap</a> template.
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{CCEF4F63-DA5D-4017-B7BE-CF92E6CAC1E3}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Showcase/Program.cs">
+    <Files>
+      <File FileName="Showcase/App.razor" Line="1" Column="1" />
+      <File FileName="Showcase/Program.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Showcase" expanded="True">
+            <Node name="Showcase" expanded="True">
+              <Node name="Pages" expanded="True" />
+              <Node name="Program.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Showcase PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

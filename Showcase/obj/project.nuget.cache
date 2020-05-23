@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "t8n2Hn4XG45WkzgvMnrwIqIW6iU6A2APhChbqFtdJRtepS13zj2mnqgAQafmP1oiWQeVx+ypR8tijKfc/Wn2/Q==",
+  "success": true,
+  "projectFilePath": "/Users/christiannelson/Documents/dev/dotnet/Showcase/Showcase/Showcase.csproj",
+  "expectedPackageFiles": [
+    "/Users/christiannelson/.nuget/packages/microsoft.aspnetcore.app.ref/3.0.1/microsoft.aspnetcore.app.ref.3.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

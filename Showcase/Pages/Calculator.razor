@@ -1,0 +1,161 @@
+﻿@page "/calculator"
+
+    <div id="calc-container" class="border rounded-lg border-info m-0 custom-control-inline">
+        <div id="calc" >
+            <div id="calc-screen" class="alert alert-dark">@display</div>
+            <table class="table table-borderless m-0">
+                <tr>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(7.ToString()))">7</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(8.ToString()))">8</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(9.ToString()))">9</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick=@(e => SetOp('÷'))>÷</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick="Clear">C</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(4.ToString()))">4</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(5.ToString()))">5</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(6.ToString()))">6</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick=@(e => SetOp('×'))>×</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick="Negate">±</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(1.ToString()))">1</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(2.ToString()))">2</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(3.ToString()))">3</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick=@(e => SetOp('-'))>-</button>
+                    </td>
+                    <td rowspan="2">
+                        <button class="btn btn-info btn-block" id="equal" @onclick="EqualCall">=</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="btn btn-primary btn-block" @onclick="@(e => ConcatDisplay(0.ToString()))">0</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick=@(e => ConcatDisplay("."))>.</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary btn-block" @onclick=@(e => SetOp('+'))>+</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+
+@code {
+    static string defaultDisplay = "DISPLAY";
+    string display = defaultDisplay;
+    float num;
+    char op = ' ';
+
+
+    public void ConcatDisplay(string value)
+    {
+        if (display == defaultDisplay ||
+            display == "+" ||
+            display == "-" ||
+            display == "×" ||
+            display == "÷")
+        {
+            display = "";
+        }
+        if (display.EndsWith(".") && value == ".")
+        {
+        }
+        else
+        {
+            display += value;
+        }
+
+    }
+
+    public void Negate()
+    {
+        if(display[0] == '-')
+        {
+            display = display.Substring(1);
+        }
+        else if(display == defaultDisplay)
+        {
+            display = "-";
+        }
+        else
+        {
+            display = "-" + display;
+        }
+    }
+
+    public void Clear()
+    {
+        display = defaultDisplay;
+        op = ' ';
+    }
+
+    public void ParseDisplay()
+    {
+        num = float.Parse(display);
+    }
+
+    public void EqualCall()
+    {
+        if(display != defaultDisplay && op != ' ')
+        {
+            if(op == '+')
+            {
+                display = (num + float.Parse(display)).ToString();
+            }
+            else if(op == '-')
+            {
+                display = (num - float.Parse(display)).ToString();
+            }
+            else if(op == '×')
+            {
+                display = (num * float.Parse(display)).ToString();
+            }
+            else if(op == '÷')
+            {
+                display = (num / float.Parse(display)).ToString();
+            }
+        }
+
+        op = ' ';
+
+    }
+
+    public void SetOp(char op)
+    {
+        this.op = op;
+        ParseDisplay();
+        display = op.ToString();
+    }
+
+}
